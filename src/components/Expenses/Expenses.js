@@ -1,12 +1,14 @@
 // //Sometimes you might want to configure your code without props but through opening and closing components,
 // //the position of building an app with smaller building blocks is called composition.
 
+import React from "react";
 import ExpenseItem from "./ExpenseItem";
+import Card from "../UI/Card";
 import "./Expenses.css";
 
-function Expenses(props) {
+const Expenses = (props) => {
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
@@ -27,7 +29,10 @@ function Expenses(props) {
         amount={props.items[3].amount}
         date={props.items[3].date}
       />
-    </div>
+      {/* useState registers some state so some values for the component which it is being called. it registers for a specific component instance 
+      Separate states even if we create a component more than onec.
+      */}
+    </Card>
   );
-}
+};
 export default Expenses;

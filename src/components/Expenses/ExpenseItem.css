@@ -1,3 +1,17 @@
+.expenses_filter {
+  
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+
 .expense-item {
   display: flex;
   justify-content: space-between;

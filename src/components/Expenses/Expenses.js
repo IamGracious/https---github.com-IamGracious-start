@@ -9,6 +9,16 @@ import "./Expenses.css";
 const Expenses = (props) => {
   return (
     <Card className="expenses">
+      <div className="expenses_filter">
+        <label>Filter by Year</label>
+        <input
+          type="new-year"
+          min="2018"
+          max="2023"
+          // value={enteredDate}
+          // onChange={dateChangeHandler}
+        />
+      </div>
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}

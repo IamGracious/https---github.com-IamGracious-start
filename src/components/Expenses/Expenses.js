@@ -15,12 +15,11 @@ const Expenses = (props) => {
           <option value="none" selected disabled hidden>
             Select year
           </option>
-          {props.items?.map((item) => (
-            <option key={item.id} value={item.date.getFullYear()}>
+          {props.items.map((item) => (
+            <option key={item.id} value={"${item.date.getFullYear()}"}>
               {item.date.getFullYear()}
             </option>
           ))}
-          ;
         </select>
       </div>
       <ExpenseItem

@@ -11,13 +11,17 @@ const Expenses = (props) => {
     <Card className="expenses">
       <div className="expenses_filter">
         <label>Filter by Year</label>
-        <input
-          type="new-year"
-          min="2018"
-          max="2023"
-          // value={enteredDate}
-          // onChange={dateChangeHandler}
-        />
+        <select name="expenses_date" id="expenses_date">
+          <option value="none" selected disabled hidden>
+            Select year
+          </option>
+          {props.items?.map((item) => (
+            <option key={item.id} value={item.date.getFullYear()}>
+              {item.date.getFullYear()}
+            </option>
+          ))}
+          ;
+        </select>
       </div>
       <ExpenseItem
         title={props.items[0].title}

@@ -6,7 +6,7 @@ import Expenses from "./components/Expenses/Expenses";
 //Arrow function is an alternative to writing functions, not just in react but also in any js syntax or code.
 //function is replaced with "const"
 const App = () => {
-  const expenses = [
+  const data_expenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -18,7 +18,7 @@ const App = () => {
       id: "e3",
       title: "Car Insurance",
       amount: 294.67,
-      date: new Date(2021, 2, 28),
+      date: new Date(2003, 2, 28),
     },
     {
       id: "e4",
@@ -30,20 +30,12 @@ const App = () => {
 
   const addExpenseHandler = (expense) => {
     console.log("In App.js");
-    console.log(expenses);
   };
-
-  // return React.createElement(
-  //   "div",
-  //   {},
-  //   React.createElement("h2", {}, "Lets get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses items={data_expenses} />
     </div>
   );
 };

@@ -1,18 +1,27 @@
-import ExpenseItem from "./ExpenseItem";
-import Card from "../UI/Card";
-import "./Expenses.css";
+import React, { useEffect, useState } from "react";
 
-<div className="expenses_filter">
-  <label>Filter by Year</label>
-  <select name="expenses_date" id="expenses_date">
-    <option value="none" selected disabled hidden>
-      Select year
-    </option>
-    {props.items.map((item) => (
-      <option key={item.id} value={`${item.date.getFullYear()}`}>
-        {item.date.getFullYear()}
-      </option>
-    ))}
-  </select>
-</div>;
-export default filter;
+const Filter = ({ items, setSelectedYear }) => {
+  const [uniqueYear, setUniqueYear] = useState([]);
+  useEffect(() => {
+    setUniqueYear([...new Set(items.map((item) => item.date.getFullYear()))]);
+  }, [uniqueYear.length]);
+  const handleChange = (e) => {
+    setSelectedYear(e.target.value);
+  };
+  return (
+    <div className="expenses_filter">
+      <label>Filter by Year</label>
+      <select name="expenses_date" id="expenses_date" onChange={handleChange}>
+        <option defaultValue={"selecte year"}>Select year</option>
+        {uniqueYear.length > 0 &&
+          uniqueYear.map((year) => (
+            <option key={year} value={`${year}`}>
+              {year}
+            </option>
+          ))}
+      </select>
+    </div>
+  );
+};
+
+export default Filter;

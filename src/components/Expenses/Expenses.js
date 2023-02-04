@@ -9,19 +9,6 @@ import "./Expenses.css";
 const Expenses = (props) => {
   return (
     <Card className="expenses">
-      <div className="expenses_filter">
-        <label>Filter by Year</label>
-        <select name="expenses_date" id="expenses_date">
-          <option value="none" selected disabled hidden>
-            Select year
-          </option>
-          {props.items.map((item) => (
-            <option key={item.id} value={"${item.date.getFullYear()}"}>
-              {item.date.getFullYear()}
-            </option>
-          ))}
-        </select>
-      </div>
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}

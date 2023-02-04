@@ -46,17 +46,6 @@ const App = () => {
       <Expenses items={expenses} />
     </div>
   );
-
-  //create element takes 3 arguement. the first arguement takes the element which you've created eg: the div and if it is a built in element, you will have to pass a string with the name of the arguement like a string.
-  //2. the second arguement is the object that configures the first arguement, specifically a object that sets all the attributes of the first element.
-  //3.content btw the opening and closing tag
-  //side note: what is the difference between a function, element, object,arguement, attribute, and parameter? how can each of them be identified.
-  //   return (
-  //     <div>
-  //       <h2>Let's get started!</h2>
-  //       <Expenses items={expenses} />
-  //     </div>
-  //   );
 };
-//jsx is a c
+
 export default App;
